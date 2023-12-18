@@ -1,0 +1,17 @@
+{
+    "name": "zoritto/orientacao_objetos_php",
+    "description": "Orientaca_objetos",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Zoritto\\OrientacaoObjetosPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Wendeson Farias",
+            "email": "zorittoprogramador@gmail.com"
+        }
+    ],
+    "require": {}
+}
