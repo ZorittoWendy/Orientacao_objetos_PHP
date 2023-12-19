@@ -5,11 +5,11 @@
     namespace Zoritto\OrientacaoObjetosPhp;
 
     class ContaBancaria{
-        public string $banco = "Banco Inter";
-        public string $nomeTitular = "Zoritto programador";
-        public string $numeroAgencia = "8882";
-        public string $numeroConta = "55969-2";
-        public float $saldo = 0;
+        private string $banco;
+        private string $nomeTitular;
+        private string $numeroAgencia;
+        private string $numeroConta;
+        private float $saldo;
 
         public function exibirDadosDaConta():array{
             return[
@@ -19,6 +19,57 @@
                 'numeroConta' => $this->numeroConta,
                 'saldo' => $this->saldo,
             ];
+        }
+
+
+        public function getBanco():string
+        {
+            return $this->banco;
+        }
+
+        public function setBanco(string $banco):void
+        {
+            $this->banco = $banco;
+        }
+
+        public function getNometitular():string
+        {
+            return $this->nomeTitular;
+        }
+
+        public function setNomeTitular(string $nomeTitular):void
+        {
+            $this->nomeTitular = $nomeTitular;
+        }
+
+        public function getNumeroAgencia():string
+        {
+            return $this->numeroAgencia;
+        }
+
+        public function setNumeroAgencia(string $numeroAgencia):void
+        {
+            $this->numeroAgencia = $numeroAgencia;
+        }
+
+        public function NumeroConta():string
+        {
+            return $this->numeroConta;
+        }
+
+        public function setNumeroConta(string $numeroConta):void
+        {
+            $this->numeroConta = $numeroConta;
+        }
+
+        public function getSaldo():float
+        {
+            return $this->saldo;
+        }
+
+        public function setSaldo(float $saldo):void
+        {
+            $this->saldo = $saldo;
         }
 
     }
