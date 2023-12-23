@@ -4,14 +4,16 @@
 
     namespace Zoritto\OrientacaoObjetosPhp;
 
-use NumberFormatter;
+use Zoritto\OrientacaoObjetosPhp\Contratos\DadosContaBancariaInterface;
+use Zoritto\OrientacaoObjetosPhp\OperacoesContaBancariaInterface;
 
-    class ContaBancaria{
-        private string $banco;
-        private string $nomeTitular;
-        private string $numeroAgencia;
-        private string $numeroConta;
-        private float $saldo;
+
+    abstract class ContaBancaria implements  OperacoesContaBancariaInterface, DadosContaBancariaInterface{
+        protected string $banco;
+        protected string $nomeTitular;
+        protected string $numeroAgencia;
+        protected string $numeroConta;
+        protected float $saldo;
 
         public function __construct(
             string $banco,
@@ -31,18 +33,15 @@ use NumberFormatter;
 
         public function depositar(float $valor):string{
             $this -> saldo += $valor;
-            return 'Dpeosito de R$' . number_format($valor, 2, ', ', ''). 'realizado';
+            return 'Dpeosito de R$' . $valor . 'realizado';
         }
 
         public function sacar(float $valor): string {
             $this ->saldo -= $valor;
-            return 'Saque de R$ ' . number_format($valor, 2, ', ', '') . 'realizado';
+            return 'Saque de R$ ' . $valor . 'realizado';
         }
 
-        public function obterSaldo(): string {
-            return 'Seu saldo atual é: R$ ' . number_format($this->saldo, 2, ',', '');
-    
-        }
+        public abstract function obterSaldo(): string;
 
 
         public function getBanco():string
@@ -60,12 +59,10 @@ use NumberFormatter;
             return $this->numeroAgencia;
         }
 
-        public function NumeroConta():string
+        public function getNumeroConta():string
         {
             return $this->numeroConta;
         }
-
-        
 
     }
     

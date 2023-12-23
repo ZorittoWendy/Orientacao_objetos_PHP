@@ -1,0 +1,13 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Zoritto\OrientacaoObjetosPhp;
+
+interface OperacoesContaBancariaInterface{
+    public function depositar(float $valor) : string;
+    public function sacar(float $valor) : string;
+    public function obterSaldo(float $valor) : string; 
+}
+
+?>
